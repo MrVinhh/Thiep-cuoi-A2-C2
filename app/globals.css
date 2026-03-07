@@ -1549,3 +1549,14 @@ footer {
   0%   { opacity: 0.6; transform: scale(1); }
   100% { opacity: 0;   transform: scale(1.5); }
 }
+
+/* Hide YouTube music iframe completely */
+#yt-music-player {
+  position: fixed !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}

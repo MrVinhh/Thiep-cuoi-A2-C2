@@ -27,6 +27,8 @@ export default function MusicPlayer() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const YT = (window as any).YT;
       playerRef.current = new YT.Player('yt-music-player', {
+        width: '1',
+        height: '1',
         videoId: '2Vv-BfVoq4g', // Ed Sheeran - Perfect
         playerVars: {
           autoplay: 0,
