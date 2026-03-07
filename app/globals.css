@@ -1454,3 +1454,98 @@ footer {
   .inv-couple    { font-size: 2.2rem; }
   .cd-value      { font-size: 2.3rem; }
 }
+
+/* ─────────────────────────────────────
+   MUSIC PLAYER
+───────────────────────────────────── */
+.music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: rgba(250, 248, 244, 0.92);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(201, 162, 84, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.4s;
+  opacity: 0.4;
+  padding: 0;
+}
+
+.music-btn--ready { opacity: 1; }
+
+.music-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(201, 162, 84, 0.4);
+}
+
+.music-note {
+  color: var(--gold-dark);
+  position: absolute;
+  transition: opacity 0.2s;
+}
+
+/* Vinyl disc (shows when playing, spins) */
+.music-disc {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: conic-gradient(
+    var(--cream2) 0deg 60deg,
+    var(--gold) 60deg 62deg,
+    var(--cream2) 62deg 180deg,
+    var(--gold) 180deg 182deg,
+    var(--cream2) 182deg 360deg
+  );
+}
+
+.music-disc-center {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-dark);
+}
+
+.music-btn--playing .music-disc {
+  opacity: 1;
+  animation: spin-disc 3s linear infinite;
+}
+
+.music-btn--playing .music-note {
+  opacity: 0;
+}
+
+@keyframes spin-disc {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Ripple pulse when playing */
+.music-btn--playing::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  animation: music-ripple 1.8s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes music-ripple {
+  0%   { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.5); }
+}

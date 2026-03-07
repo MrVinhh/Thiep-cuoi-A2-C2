@@ -5,6 +5,7 @@ import ClientEffects from '@/components/ClientEffects';
 import PetalCanvas from '@/components/PetalCanvasLoader';
 import ConfettiLoader from '@/components/ConfettiLoader';
 import InvitationCoverLoader from '@/components/InvitationCoverLoader';
+import MusicPlayer from '@/components/MusicPlayer';
 
 const IMG = {
   hero:         '/z7593996846495_bcf88d92b7c27eabd11ac3902a72faf9.jpg',
@@ -85,6 +86,7 @@ export default function Page() {
       <InvitationCoverLoader />
       <PetalCanvas />
       <ClientEffects />
+      <MusicPlayer />
 
       {/* ══════════════════════════════
           HERO
