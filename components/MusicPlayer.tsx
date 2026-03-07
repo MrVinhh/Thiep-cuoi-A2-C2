@@ -21,7 +21,7 @@ export default function MusicPlayer() {
       const div = document.createElement('div');
       div.id = 'yt-music-player';
       div.style.cssText =
-        'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;';
+        'position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;pointer-events:none;';
       document.body.appendChild(div);
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
