@@ -2,67 +2,17 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function MusicPlayer() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const playerRef = useRef<any>(null);
-  const readyRef = useRef(false);
-  const pendingPlayRef = useRef(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!document.getElementById('yt-iframe-api')) {
-      const tag = document.createElement('script');
-      tag.id = 'yt-iframe-api';
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(tag);
-    }
+    const audio = new Audio('/music.mp3');
+    audio.loop = true;
+    audio.volume = 0.6;
+    audioRef.current = audio;
 
-    function initPlayer() {
-      const div = document.createElement('div');
-      div.id = 'yt-music-player';
-      div.style.cssText =
-        'position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;pointer-events:none;';
-      document.body.appendChild(div);
-
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const YT = (window as any).YT;
-      playerRef.current = new YT.Player('yt-music-player', {
-        width: '1',
-        height: '1',
-        videoId: '2Vv-BfVoq4g', // Ed Sheeran - Perfect
-        playerVars: {
-          autoplay: 0,
-          loop: 1,
-          playlist: '2Vv-BfVoq4g',
-          start: 21, // bắt đầu từ điệp khúc (~1:00)
-          controls: 0,
-          disablekb: 1,
-          fs: 0,
-          iv_load_policy: 3,
-          modestbranding: 1,
-          rel: 0,
-        },
-        events: {
-          onReady: () => {
-            readyRef.current = true;
-            setReady(true);
-            // Nếu user đã click trước khi player sẵn sàng, phát ngay
-            if (pendingPlayRef.current) {
-              playerRef.current.playVideo();
-              setPlaying(true);
-            }
-          },
-        },
-      });
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    if ((window as any).YT?.Player) {
-      initPlayer();
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (window as any).onYouTubeIframeAPIReady = initPlayer;
-    }
+    audio.addEventListener('canplaythrough', () => setReady(true));
 
     let started = false;
     function onFirstInteraction() {
@@ -70,14 +20,7 @@ export default function MusicPlayer() {
       started = true;
       document.removeEventListener('click', onFirstInteraction);
       document.removeEventListener('touchstart', onFirstInteraction);
-
-      if (readyRef.current && playerRef.current) {
-        playerRef.current.playVideo();
-        setPlaying(true);
-      } else {
-        // Player chưa sẵn sàng → đặt cờ, onReady sẽ xử lý
-        pendingPlayRef.current = true;
-      }
+      audio.play().then(() => setPlaying(true)).catch(() => {});
     }
 
     document.addEventListener('click', onFirstInteraction);
@@ -86,18 +29,20 @@ export default function MusicPlayer() {
     return () => {
       document.removeEventListener('click', onFirstInteraction);
       document.removeEventListener('touchstart', onFirstInteraction);
+      audio.pause();
+      audio.src = '';
     };
   }, []);
 
   function toggle(e: React.MouseEvent) {
     e.stopPropagation();
-    if (!playerRef.current || !readyRef.current) return;
+    const audio = audioRef.current;
+    if (!audio || !ready) return;
     if (playing) {
-      playerRef.current.pauseVideo();
+      audio.pause();
       setPlaying(false);
     } else {
-      playerRef.current.playVideo();
-      setPlaying(true);
+      audio.play().then(() => setPlaying(true)).catch(() => {});
     }
   }
 
