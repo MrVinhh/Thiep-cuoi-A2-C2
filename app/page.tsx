@@ -75,9 +75,8 @@ const PinIcon = () => (
 
 const timeline = [
   { time: '08:30', event: 'Lễ 2 Bên Gia Đình (Tư Gia)' },
-  { time: '10:00', event: 'Đón Khách' },
-  { time: '10:30', event: 'Lễ Thành Hôn & Vu Quy' },
-  { time: '11:00', event: 'Khai Tiệc' },
+  { time: '18:00', event: 'Đón Khách' },
+  { time: '19:00', event: 'Khai Tiệc' },
 ];
 
 export default function Page() {
@@ -105,7 +104,7 @@ export default function Page() {
             <div className="divider-line" />
             <span>Đoan Trinh</span>
           </h1>
-          <p className="hero-date">14 . 03 . 2026</p>
+          <p className="hero-date">22 . 04 . 2026</p>
         </div>
       </section>
 
@@ -133,7 +132,7 @@ export default function Page() {
           <span className="std-title-script">the</span>
           <span className="std-title"> DATE</span>
         </div>
-        <p className="std-date">14 . 03 . 2026</p>
+        <p className="std-date">22 . 04 . 2026</p>
 
         <div className="floral-divider" style={{ margin: '24px 0 16px' }}><FloralDivider /></div>
 
@@ -153,7 +152,7 @@ export default function Page() {
           </div>
         </div>
 
-        <a className="direction-btn" href="https://maps.google.com/?q=Trung+Tam+To+Chuc+Su+Kien+Tiec+Cuoi+Nhan+Tam+Hue" target="_blank" rel="noopener noreferrer">
+        <a className="direction-btn" href="https://maps.app.goo.gl/otdapzafvALq9fC67" target="_blank" rel="noopener noreferrer">
           <PinIcon /> CHỈ ĐƯỜNG
         </a>
       </section>
@@ -197,20 +196,20 @@ export default function Page() {
           <p className="inv-label">Hôn lễ được tổ chức</p>
           <div className="inv-divider" />
           <div className="inv-date-row">
-            <div className="inv-date-month">THÁNG 3</div>
-            <div className="inv-date-day">14</div>
+            <div className="inv-date-month">THÁNG 4</div>
+            <div className="inv-date-day">22</div>
             <div className="inv-date-year">NĂM 2026</div>
           </div>
           <div className="inv-divider" />
-          <p className="inv-value">Vào lúc 11 giờ 00, Thứ Bảy</p>
-          <p className="inv-value-sm">(Nhằm ngày 26 tháng 01 năm Bính Ngọ)</p>
+          <p className="inv-value">Vào lúc 18 giờ 00, Thứ Tư</p>
+          <p className="inv-value-sm">(Nhằm ngày 06 tháng 03 năm Bính Ngọ)</p>
         </div>
 
         <p className="inv-label" style={{ marginTop: 28 }}>Tại địa điểm</p>
-        <p className="venue-name">Trung Tâm Tổ Chức Sự Kiện<br/>Tiệc Cưới Nhân Tâm</p>
-        <p className="venue-addr">66 Nguyễn Phúc Nguyên, Phường Phú Xuân, Huế</p>
+        <p className="venue-name">Nhà Hàng Bách Việt<br/>Sảnh Rosy Lầu 2</p>
+        <p className="venue-addr">90 Mạc Đĩnh Chi, P. Đa Kao, Q.1, TP.HCM</p>
 
-        <a className="direction-btn" style={{ marginTop: 24 }} href="https://maps.google.com/?q=66+Nguyen+Phuc+Nguyen+Phu+Xuan+Hue" target="_blank" rel="noopener noreferrer">
+        <a className="direction-btn" style={{ marginTop: 24 }} href="https://maps.app.goo.gl/otdapzafvALq9fC67" target="_blank" rel="noopener noreferrer">
           <PinIcon /> CHỈ ĐƯỜNG
         </a>
       </section>
@@ -356,7 +355,7 @@ export default function Page() {
       </section>
 
       <footer>
-        QUỐC THỊNH &amp; ĐOAN TRINH &nbsp;·&nbsp; 14 . 03 . 2026
+        QUỐC THỊNH &amp; ĐOAN TRINH &nbsp;·&nbsp; 22 . 04 . 2026
       </footer>
     </>
   );

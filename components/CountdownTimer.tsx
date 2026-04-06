@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 
-const TARGET = new Date('2026-03-14T11:00:00');
+const TARGET = new Date('2026-04-22T18:00:00');
 
 function calcDiff() {
   const diff = TARGET.getTime() - Date.now();

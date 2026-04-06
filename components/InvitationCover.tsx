@@ -49,8 +49,8 @@ export default function InvitationCover() {
 
         <div className="cover-divider" />
 
-        <p className="cover-date">14 · 03 · 2026</p>
-        <p className="cover-venue">Trung Tâm Tiệc Cưới Nhân Tâm · Huế</p>
+        <p className="cover-date">22 · 04 · 2026</p>
+        <p className="cover-venue">Nhà Hàng Bách Việt · Sảnh Rosy Lầu 2 · TP.HCM</p>
 
         <button className="cover-btn" aria-label="Mở thiệp">
           <span className="cover-btn-text">Nhấn để mở thiệp</span>

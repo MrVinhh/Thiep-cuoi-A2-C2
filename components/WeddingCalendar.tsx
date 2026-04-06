@@ -1,10 +1,10 @@
-// Static March 2026 calendar — March 1 = Sunday (CN)
+// Static April 2026 calendar — April 1 = Wednesday (T4)
 // Columns: T2 T3 T4 T5 T6 T7 CN  (Mon–Sun)
 const DAYS_HEADER = ['T2','T3','T4','T5','T6','T7','CN'];
 
-// March 2026: starts Sunday → offset 6 (0=Mon … 6=Sun)
-const OFFSET = 6;
-const TOTAL  = 31;
+// April 2026: starts Wednesday → offset 2 (0=Mon … 6=Sun)
+const OFFSET = 2;
+const TOTAL  = 30;
 
 function buildWeeks() {
   const cells: (number | null)[] = [
@@ -30,7 +30,7 @@ export default function WeddingCalendar() {
         <span className="cal-name-script cal-name-serif">Thịnh</span>
       </div>
 
-      <p className="cal-month">Tháng 03 – 2026</p>
+      <p className="cal-month">Tháng 04 – 2026</p>
 
       {/* Grid */}
       <table className="cal-table">
@@ -45,7 +45,7 @@ export default function WeddingCalendar() {
           {weeks.map((week, wi) => (
             <tr key={wi}>
               {week.map((day, di) => (
-                <td key={di} className={`cal-td${day === 14 ? ' cal-td--highlight' : ''}`}>
+                <td key={di} className={`cal-td${day === 22 ? ' cal-td--highlight' : ''}`}>
                   {day ?? ''}
                 </td>
               ))}
