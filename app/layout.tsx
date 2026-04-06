@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Great_Vibes, Cormorant_Garamond, Lato } from "next/font/google";
 import "./globals.css";
 
-const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"], variable: "--font-script" });
+const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin", "vietnamese"], variable: "--font-script" });
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],

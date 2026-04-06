@@ -230,7 +230,7 @@ export default function Page() {
 
         {/* Bride & Groom typographic block */}
         <div className="couple-names-block">
-          <p className="cn-name">PHẠM QUỐC THỊNH</p>
+          <p className="cn-name">Phạm Quốc Thịnh</p>
           <div className="cn-and-row">
             <div className="cn-side">
               <div className="cn-divider-line" />
@@ -242,7 +242,7 @@ export default function Page() {
               <div className="cn-divider-line" />
             </div>
           </div>
-          <p className="cn-name">PHẠM THỊ ĐOAN TRINH</p>
+          <p className="cn-name">Phạm Thị Đoan Trinh</p>
         </div>
 
       </section>
