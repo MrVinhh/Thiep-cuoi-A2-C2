@@ -74,7 +74,6 @@ const PinIcon = () => (
 );
 
 const timeline = [
-  { time: '08:30', event: 'Lễ 2 Bên Gia Đình (Tư Gia)' },
   { time: '18:00', event: 'Đón Khách' },
   { time: '19:00', event: 'Khai Tiệc' },
 ];
@@ -172,15 +171,15 @@ export default function Page() {
         {/* Parents block */}
         <div className="inv-parents">
           <div className="inv-family">
-            <p className="inv-family-label">Nhà Gái</p>
-            <p className="inv-parent">Ông <strong>PHẠM VĂN LẠI</strong></p>
-            <p className="inv-parent">Bà <strong>HỒ THỊ KIM ANH</strong></p>
-          </div>
-          <div className="inv-family-sep" />
-          <div className="inv-family">
             <p className="inv-family-label">Nhà Trai</p>
             <p className="inv-parent">Ông <strong>PHẠM QUANG HƯNG</strong></p>
             <p className="inv-parent">Bà <strong>NGUYỄN THỊ THÚY NGA</strong></p>
+          </div>
+          <div className="inv-family-sep" />
+          <div className="inv-family">
+            <p className="inv-family-label">Nhà Gái</p>
+            <p className="inv-parent">Ông <strong>PHẠM VĂN LẠI</strong></p>
+            <p className="inv-parent">Bà <strong>HỒ THỊ KIM ANH</strong></p>
           </div>
         </div>
 
@@ -231,19 +230,19 @@ export default function Page() {
 
         {/* Bride & Groom typographic block */}
         <div className="couple-names-block">
-          <p className="cn-name">PHẠM THỊ ĐOAN TRINH</p>
+          <p className="cn-name">PHẠM QUỐC THỊNH</p>
           <div className="cn-and-row">
             <div className="cn-side">
               <div className="cn-divider-line" />
-              <span className="cn-role">Trưởng Nữ</span>
+              <span className="cn-role">Trưởng Nam</span>
             </div>
             <span className="cn-script">and</span>
             <div className="cn-side cn-side--right">
-              <span className="cn-role">Trưởng Nam</span>
+              <span className="cn-role">Trưởng Nữ</span>
               <div className="cn-divider-line" />
             </div>
           </div>
-          <p className="cn-name">PHẠM QUỐC THỊNH</p>
+          <p className="cn-name">PHẠM THỊ ĐOAN TRINH</p>
         </div>
 
       </section>

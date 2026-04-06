@@ -25,9 +25,9 @@ export default function WeddingCalendar() {
     <div className="cal-wrap">
       {/* Header names */}
       <div className="cal-names">
-        <span className="cal-name-script">Trinh</span>
-        <span className="cal-name-and"> and </span>
         <span className="cal-name-script cal-name-serif">Thịnh</span>
+        <span className="cal-name-and"> and </span>
+        <span className="cal-name-script">Trinh</span>
       </div>
 
       <p className="cal-month">Tháng 04 – 2026</p>
